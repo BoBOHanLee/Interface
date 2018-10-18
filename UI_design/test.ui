@@ -21,9 +21,9 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>580</y>
-      <width>881</width>
+      <width>911</width>
       <height>80</height>
      </rect>
     </property>
@@ -122,10 +122,10 @@
     <widget class="QLabel" name="img_main">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>271</width>
-       <height>421</height>
+       <x>50</x>
+       <y>20</y>
+       <width>261</width>
+       <height>441</height>
       </rect>
      </property>
      <property name="text">
@@ -135,8 +135,8 @@
     <widget class="QLabel" name="img_roi">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>470</y>
+       <x>170</x>
+       <y>460</y>
        <width>111</width>
        <height>61</height>
       </rect>
@@ -145,14 +145,35 @@
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>470</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微軟正黑體</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ROI窗口</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
-      <width>471</width>
-      <height>311</height>
+      <x>30</x>
+      <y>10</y>
+      <width>501</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="title">
@@ -162,10 +183,10 @@
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>360</y>
-      <width>471</width>
-      <height>211</height>
+      <x>30</x>
+      <y>440</y>
+      <width>501</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="title">
@@ -197,10 +218,11 @@
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>模式</string>
+     <string>檔案</string>
     </property>
     <addaction name="actionds"/>
     <addaction name="action"/>
+    <addaction name="action_2"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -219,7 +241,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionds">
    <property name="text">
-    <string>監控</string>
+    <string>開啟檔案</string>
    </property>
    <property name="statusTip">
     <string>監控即時列印狀況</string>
@@ -230,13 +252,18 @@
   </action>
   <action name="action">
    <property name="text">
-    <string>數據分析</string>
+    <string>輸出狀態表</string>
    </property>
    <property name="statusTip">
     <string>以圖表方式分析影像以及列印數據</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>影像數據分析</string>
    </property>
   </action>
  </widget>
