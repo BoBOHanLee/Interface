@@ -7,15 +7,20 @@ MAX_FEATURES = 500
 GOOD_MATCH_PERCENT = 0.1  #取匹配效果最好的前10%
 
 # nozzle tracking for feature match
-def alignImages(im1, im2):
+def alignImages(im1, im2):                  #噴頭的特徵比對  但目前照面模糊  無法跑出特徵匹配的效果
     # Convert images to grayscale
+
+
     im1Gray = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
     im2Gray = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
+
 
     # Detect ORB features and compute descriptors.
     orb = cv2.ORB_create(MAX_FEATURES)
     keypoints1, descriptors1 = orb.detectAndCompute(im1Gray, None)
     keypoints2, descriptors2 = orb.detectAndCompute(im2Gray, None)
+
+
 
     # Match features.
     matcher = cv2.DescriptorMatcher_create(cv2.DESCRIPTOR_MATCHER_BRUTEFORCE_HAMMING)    # use the way of Brute-Force
@@ -41,7 +46,7 @@ def alignImages(im1, im2):
         points1[i, :] = keypoints1[match.queryIdx].pt
         points2[i, :] = keypoints2[match.trainIdx].pt
 
-    #print(points1)
+
     # Find homography   轉換矩陣 以匹配點來計算
     h, mask = cv2.findHomography(points1, points2, cv2.RANSAC)
 
@@ -62,7 +67,7 @@ def alignImages(im1, im2):
         else:
             continue
 
-    cv2.circle(im2, (points2[num_xy,0],points2[num_xy,1]) ,50, (0, 0, 255), -1)
+    cv2.circle(im2, (points2[num_xy,0],points2[num_xy,1]) ,10, (0, 0, 255), -1)
     #im2 = cv2.resize(im2, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_LINEAR)
     #cv2.imshow('nozzle',im2)
     cv2.imwrite('nozzle.jpg',im2)

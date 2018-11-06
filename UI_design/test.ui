@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1030</width>
-    <height>720</height>
+    <width>1028</width>
+    <height>723</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -125,7 +125,7 @@
        <x>50</x>
        <y>20</y>
        <width>261</width>
-       <height>441</height>
+       <height>421</height>
       </rect>
      </property>
      <property name="text">
@@ -212,7 +212,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1030</width>
+     <width>1028</width>
      <height>21</height>
     </rect>
    </property>
@@ -264,6 +264,9 @@
   <action name="action_2">
    <property name="text">
     <string>影像數據分析</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
    </property>
   </action>
  </widget>
